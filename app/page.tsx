@@ -1,7 +1,10 @@
+import { Button } from "@/src/components/ui/button";
+
 export default function Home() {
   return (
-    <div className="mt-4 flex items-center rounded bg-blue-500 p-4 text-red-500">
+    <div className="mt-4 flex items-center rounded">
       Inicial
+      <Button>Button</Button>
     </div>
   );
 }
