@@ -1,0 +1,186 @@
+{
+  "version": "8",
+  "dialect": "postgres",
+  "id": "6c1ff4bc-e53d-4f96-a39d-ecd851b3aad3",
+  "prevIds": [
+    "7651e54d-2e72-4483-9760-a25fc099bf03"
+  ],
+  "ddl": [
+    {
+      "values": [
+        "HOUSING",
+        "TRANSPORTATION",
+        "FOOD",
+        "ENTERTAIMENT",
+        "HEALTH",
+        "UTILITY",
+        "SALARY",
+        "EDUCATION",
+        "OTHER"
+      ],
+      "name": "transaction_category",
+      "entityType": "enums",
+      "schema": "public"
+    },
+    {
+      "values": [
+        "CREDIT_CARD",
+        "DEBIT_CARD",
+        "BANK_TRANSFER",
+        "BANK_SLIP",
+        "CASH",
+        "PIX",
+        "OTHER"
+      ],
+      "name": "transaction_payment_method",
+      "entityType": "enums",
+      "schema": "public"
+    },
+    {
+      "values": [
+        "DEPOSIT",
+        "EXPENSE",
+        "INVESTMENT"
+      ],
+      "name": "transaction_type",
+      "entityType": "enums",
+      "schema": "public"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "transactions",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "name",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "type": "transaction_type",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "type",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "type": "transaction_category",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "category",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "type": "numeric(12,2)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "amount",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "type": "transaction_payment_method",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "payment_method",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "date",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "update_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "transactions"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "transaction_pkey",
+      "schema": "public",
+      "table": "transactions",
+      "entityType": "pks"
+    }
+  ],
+  "renames": [
+    "public.transaction->public.transactions"
+  ]
+}
